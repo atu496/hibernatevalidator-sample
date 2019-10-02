@@ -28,8 +28,7 @@ public class MainController {
 	public String exe(@ModelAttribute @Valid SampleForm form, BindingResult result, RedirectAttributes attribute) {
 		if (result.hasErrors()) {
 			for (ObjectError error : result.getAllErrors()) {
-				String fieldErrors = ((FieldError) error).getField();
-				attribute.addFlashAttribute(fieldErrors + "errormsg", error.getDefaultMessage());
+				attribute.addFlashAttribute(((FieldError) error).getField() + "errormsg", error.getDefaultMessage());
 			}
 		}
 		return "redirect:/";
