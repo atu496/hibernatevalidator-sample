@@ -30,25 +30,31 @@
 				<h1>HibernateValidator検証</h1>
 				<p>HibernateValidator検証のデモページです。</p>
 			</div>
-			<form method="post" action="#" th:action="@{/exe/validation}">
+			<div class="panel panel-success">
+				<div class="panel-heading">バリデーションチェック</div>
+				<div class="panel-body">
+					<form method="post" action="#" th:action="@{/exe/validation}">
+						<p>
+							@Length:<input type="text" name="length" /><span
+								th:text="${lengtherrormsg}"></span>
+						</P>
+						<p>
+							@Email：<input type="text" name="email" /><span
+								th:text="${emailerrormsg}"></span>
+						</P>
+						<p>
+							@NotEmpty：<input type="text" name="notnull" /><span
+								th:text="${notemptyerrormsg}"></span>
+						</P>
+						<p>
+							@NotBlank：<input type="text" name="notblank" /><span
+								th:text="${notblankerrormsg}"></span>
+						</p>
 						<button type="submit" class="btn btn-default">実行</button>
-				<p>
-					@Length:<input type="text" name="length" /><span
-						th:text="${lengtherrormsg}"></span>
-				</P>
-				<p>
-					@Email：<input type="text" name="email" /><span
-						th:text="${emailerrormsg}"></span>
-				</P>
-				<p>
-					@NotEmpty：<input type="text" name="notnull" /><span
-						th:text="${notemptyerrormsg}"></span>
-				</P>
-				<p>
-					@NotBlank：<input type="text" name="notblank" /><span
-						th:text="${notblankerrormsg}"></span>
-				</p>
-			</form>
+
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
